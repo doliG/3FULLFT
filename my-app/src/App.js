@@ -15,19 +15,19 @@ function App() {
       price: "6€90",
     },
     {
-      name: "Kawaii Burger",
+      name: "King toast",
       image:
         "https://ih1.redbubble.net/image.191031762.5461/flat,800x800,070,f.u2.jpg",
       price: "6€90",
     },
     {
-      name: "Kawaii Burger",
+      name: "Ice burger",
       image:
         "https://ih1.redbubble.net/image.191031762.5461/flat,800x800,070,f.u2.jpg",
       price: "6€90",
     },
     {
-      name: "Kawaii Burger",
+      name: "Le travis scott",
       image:
         "https://ih1.redbubble.net/image.191031762.5461/flat,800x800,070,f.u2.jpg",
       price: "6€90",
@@ -35,7 +35,7 @@ function App() {
   ]
 
   const burgerList = burgers.map(burger => (
-    <div className="burger-card">
+    <div key={burger.name} className="burger-card">
       <img src={burger.image} alt="Kawaii Burger" />
       <p>{burger.name}</p>
       <p>{burger.price}</p>
