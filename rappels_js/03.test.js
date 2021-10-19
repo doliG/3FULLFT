@@ -2,6 +2,7 @@ const {
   makeManyKebabs,
   makeManyVariousKebabs,
   getWithoutGluten,
+  getWithSauce,
 } = require("./03.js")
 
 test("makeManyKebabs should return a list", () => {
@@ -47,4 +48,16 @@ test("getWithoutGluten should return all kebabs without gluten", () => {
   }
 
   expect(nbSg).toBe(3)
+})
+
+test("getWithSauce should add the sauces at the end of the kebab", () => {
+  const kebabs = ["pain salade", "pain tomates"]
+  const kebabsWithSauce = getWithSauce(kebabs, " blanche harissa")
+
+  const expectedResult = [
+    "pain salade blanche harissa",
+    "pain tomates blanche harissa",
+  ]
+
+  expect(kebabsWithSauce).toStrictEqual(expectedResult)
 })

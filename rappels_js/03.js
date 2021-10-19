@@ -28,18 +28,18 @@ const makeManyKebabs = () =>
 // Récupérez les kebab et ajoutez en trois nouveaux sans gluten "pain salade tomate oignon sans-gluten"
 // A la fin vous devez avoir une liste de 13 kebab, dont trois sans gluten.
 function makeManyVariousKebabs() {
-  //   const kebabs = makeManyKebabs()
-  //   const kebabWithoutGluten = new Array(3).fill(
-  //     "pain salade tomate oignon sans-gluten"
-  //   )
-  //   return [...kebabs, ...kebebWithoutGluten]
-
   const kebabs = makeManyKebabs()
   const kebabWithoutGluten = new Array(3).fill(
     "pain salade tomate oignon sans-gluten"
   )
-  const newKebabs = kebabs.concat(kebabWithoutGluten)
-  return newKebabs
+  return [...kebabs, ...kebebWithoutGluten]
+  //   Ancienne methode
+  //   const kebabs = makeManyKebabs()
+  //   const kebabWithoutGluten = new Array(3).fill(
+  //     "pain salade tomate oignon sans-gluten"
+  //   )
+  //   const newKebabs = kebabs.concat(kebabWithoutGluten)
+  //   return newKebabs
 }
 
 // Des parisiens sont arrivés ! Récupérez tous les kebab sans gluten, ils ont faim.
@@ -54,8 +54,12 @@ const getWithoutGluten = kebabs =>
 // Pour ajouter une sauce à un kebab, on ajoute simplement le nom de la sauce
 // à la fin de la string représentant le kebab.
 // Completer la fonction ci-dessous
-function getWithSauce(kebabs, sauce) {
-  // ...
-}
+// "pain salade tomate oignon gluten" -> "pain salade tomate oignon gluten blanche harissa"
+const getWithSauce = (kebabs, sauce) => kebabs.map(k => k + sauce)
 
-module.exports = { makeManyKebabs, makeManyVariousKebabs, getWithoutGluten }
+module.exports = {
+  makeManyKebabs,
+  makeManyVariousKebabs,
+  getWithoutGluten,
+  getWithSauce,
+}
