@@ -1,25 +1,13 @@
 // Transformez ci-dessous les fonctions en fonctions fléchées.
 // 💡 https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Functions/Arrow_functions
 
-function helloKebab() {
-    return 'Hello, Kebab !'
-}
+const helloKebab = () => "Hello, Kebab !"
+const glutenOrNotGluten = withGluten => (withGluten ? "gluten" : "sans-gluten")
+const makeKebab = (kebab, withGluten) => kebab + glutenOrNotGluten(withGluten)
 
-function glutenOrNotGluten(withGluten) {
-    if (withGluten) {
-        return 'gluten'
-    } else {
-        return 'sans-gluten'
-    }
-}
-
-function makeKebab(kebab, withGluten) {
-    if (withGluten) {
-        return kebab + 'gluten'
-    } else {
-        return kebab + 'sans-gluten'
-    }
-}
+// Même symtaxe
+// const makeKebab = (kebab, withGluten) =>
+//   withGluten ? kebab + "gluten" : kebab + "sans-gluten"
 
 // Quelle différence entre une fonction fléchée et une fonction classique ?
 // Bonus: réutilisez les ternaires.
