@@ -1,38 +1,8 @@
 import "./App.css"
+import fakeData from "./burgers.json"
 
 function App() {
-  const burgers = [
-    {
-      name: "L'instagrammable",
-      image:
-        "https://ih1.redbubble.net/image.191031762.5461/flat,800x800,070,f.u2.jpg",
-      price: "10€90",
-    },
-    {
-      name: "Kawaii Burger",
-      image:
-        "https://ih1.redbubble.net/image.191031762.5461/flat,800x800,070,f.u2.jpg",
-      price: "6€90",
-    },
-    {
-      name: "King toast",
-      image:
-        "https://ih1.redbubble.net/image.191031762.5461/flat,800x800,070,f.u2.jpg",
-      price: "6€90",
-    },
-    {
-      name: "Ice burger",
-      image:
-        "https://ih1.redbubble.net/image.191031762.5461/flat,800x800,070,f.u2.jpg",
-      price: "6€90",
-    },
-    {
-      name: "Le travis scott",
-      image:
-        "https://ih1.redbubble.net/image.191031762.5461/flat,800x800,070,f.u2.jpg",
-      price: "6€90",
-    },
-  ]
+  const burgers = fakeData
 
   const burgerList = burgers.map(burger => (
     <div key={burger.name} className="burger-card">
