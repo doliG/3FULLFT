@@ -5,22 +5,12 @@ import BurgerCard from "./BurgerCard"
 
 // Guide penser en react: https://fr.reactjs.org/docs/thinking-in-react.html
 // Doc prettier pour bien formatter son code https://prettier.io/
-/**
- * Pour ajouter un burger
- */
-// - Ajouter un formulaire avec 3 inputs: name, price, image
-//   - input https://fr.reactjs.org/docs/forms.html
-
-// - Au submit du form: récupérer les 3 inputs et les passer par un post // Fake post
-//   || simplement ajouter une var burger dans la liste burger
-//   - hooks pour modifier burgers https://fr.reactjs.org/docs/hooks-intro.html
 
 /**
- * Pour supprimer un burger
+ * Consignes:
+ * - Déplacer le menu principal dans un composant Navbar
+ * - Déplacer le formulaire de création dans un composant BurgerForm
  */
-// - Ajouter un bouton suppression sur chaque burger
-// - au clic, supprimer le burger du tableau (https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
-
 function App() {
   const [burgers, setBurgers] = useState(fakeData)
 
@@ -33,7 +23,7 @@ function App() {
     setBurgers(newBurgers)
   }
 
-  const handleSubmit = event => {
+  const addBurger = event => {
     event.preventDefault()
     console.log(event)
 
@@ -57,7 +47,7 @@ function App() {
       <div className="container">{burgerList}</div>
 
       {/* Composant form */}
-      <form className="add-form" onSubmit={handleSubmit}>
+      <form className="add-form" onSubmit={addBurger}>
         <div>
           <label for="name">Nom du votre burger</label>
           <br />
