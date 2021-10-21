@@ -1,7 +1,8 @@
 import { useState } from "react"
 import "./App.css"
 import fakeData from "./burgers.json"
-import BurgerCard from "./BurgerCard"
+import BurgerCard from "./components/BurgerCard"
+import Navbar from "./components/Navbar"
 
 // Guide penser en react: https://fr.reactjs.org/docs/thinking-in-react.html
 // Doc prettier pour bien formatter son code https://prettier.io/
@@ -41,8 +42,7 @@ function App() {
 
   return (
     <div className="App">
-      {/* Composant menu */}
-      <nav className="nav">Le bon burger</nav>
+      <Navbar />
 
       <div className="container">{burgerList}</div>
 

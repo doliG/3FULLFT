@@ -1,3 +1,5 @@
+import "./BurgerCard.css"
+
 function BurgerCard(props) {
   const { burger, deleteBurger } = props
 

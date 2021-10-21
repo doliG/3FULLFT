@@ -1,0 +1,20 @@
+.burger-card {
+  border: 2px solid black;
+  padding: 20px 0 20px 0;
+  border-radius: 8px;
+  margin: 8px;
+  overflow: hidden;
+  min-width: 218px;
+  text-align: center;
+}
+
+.burger-card > img {
+  max-width: 140px;
+  max-height: 140px;
+  margin-bottom: 10px;
+}
+
+.burger-card > p {
+  margin: 0;
+  padding: 0;
+}
