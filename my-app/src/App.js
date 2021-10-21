@@ -1,3 +1,4 @@
+import { useState } from "react"
 import "./App.css"
 import fakeData from "./burgers.json"
 
@@ -18,13 +19,19 @@ import fakeData from "./burgers.json"
 // - au clic, supprimer le burger du tableau (https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
 
 function App() {
-  const burgers = fakeData
+  const [burgers, setBurgers] = useState(fakeData)
+
+  const deleteBurger = name => {
+    const newBurgers = burgers.filter(burger => burger.name !== name)
+    setBurgers(newBurgers)
+  }
 
   const burgerList = burgers.map(burger => (
     <div key={burger.name} className="burger-card">
       <img src={burger.image} alt="Kawaii Burger" />
       <p>{burger.name}</p>
       <p>{burger.price}</p>
+      <button onClick={() => deleteBurger(burger.name)}>Supprimer</button>
     </div>
   ))
 
