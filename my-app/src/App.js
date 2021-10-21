@@ -1,7 +1,10 @@
 import { useState } from "react"
 import "./App.css"
 import fakeData from "./burgers.json"
+import BurgerCard from "./BurgerCard"
 
+// Guide penser en react: https://fr.reactjs.org/docs/thinking-in-react.html
+// Doc prettier pour bien formatter son code https://prettier.io/
 /**
  * Pour ajouter un burger
  */
@@ -43,20 +46,17 @@ function App() {
   }
 
   const burgerList = burgers.map(burger => (
-    <div key={burger.name} className="burger-card">
-      <img src={burger.image} alt="Kawaii Burger" />
-      <p>{burger.name}</p>
-      <p>{burger.price}</p>
-      <button onClick={() => deleteBurger(burger.name)}>Supprimer</button>
-    </div>
+    <BurgerCard burger={burger} deleteBurger={deleteBurger} />
   ))
 
   return (
     <div className="App">
+      {/* Composant menu */}
       <nav className="nav">Le bon burger</nav>
 
       <div className="container">{burgerList}</div>
 
+      {/* Composant form */}
       <form className="add-form" onSubmit={handleSubmit}>
         <div>
           <label for="name">Nom du votre burger</label>
